@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_title %}
+    <h2>Blog Posts</h2>
+{% endblock page_title %}
+
+{% block page_content %}
+
+    <style>
+
+        h2 {
+            margin: 10px;
+        }
+
+        .card {
+            background: #061124;
+            border-color: #69C7B6;
+            margin: 10px;
+        }
+
+        .card:hover {
+            box-shadow: 2px 2px 8px rgb(4, 255, 125);
+            cursor: pointer;
+        }
+    </style>
+
+    {% block posts %}
+        {% for post in posts %}
+            <div class="card" onclick="location.href='{% url 'blog_detail' post.pk %}';">
+                <div class="card-body">
+                    <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+                    <small>
+                        {{ post.created_on.date }} | Categories:
+                        {% for category in post.categories.all %}
+                            <a href="{% url 'blog_category' category.name %}">
+                                {{ category.name }}
+                            </a>
+                        {% endfor %}
+                    </small>
+                    <p>{{ post.body | slice:":250" }}...</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% endblock posts %}
+
+{% endblock page_content %}

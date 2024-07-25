@@ -1,0 +1,20 @@
+#comment-identifier, #comment-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.comment-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#comment-title {
+    align-self: flex-start;
+}
+
+.card {
+    background-color: #061124;
+    border-color: #69C7B6;
+    align-self: flex-start;
+}
+

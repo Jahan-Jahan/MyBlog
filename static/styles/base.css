@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #061124;
+    color: #69C7B6;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav ul li :hover {
+    font-weight: bold;
+}

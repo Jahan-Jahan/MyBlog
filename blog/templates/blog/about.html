@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %}
+<h2>About Me</h2>
+{% endblock page_title %}
+
+{% block page_content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about.css' %}">
+
+<div class="card">
+    <div class="card-body bg-dark">
+        <h3>Hi, I'm Abolfazl Jahangir,</h3>
+
+        <p>About five years ago, I developed an interest in electricity and electronics. 
+            I spent my time working on different circuits, building them, and occasionally getting electrocuted in the process. 
+            Alongside this, I explored modules that required programming(a skill I hadn't yet acquired) driven by curiosity, 
+            I decided to learn programming to integrate it with these fascinating modules.
+
+            This decision marked a turning point. 
+            I became deeply passionate about programming, which led me to dive into the broader field of computer science. 
+            My journey eventually steered me toward machine learning, a field that captivated me and motivated me to study it extensively.
+            
+            Currently, I am focusing on back-end development, continuously striving to expand my knowledge. 
+            I live in Mashhad and am a computer science student at Ferdowsi University. Let's embark on this learning journey together!
+        </p>
+    </div>
+</div>
+
+{% endblock page_content %}

@@ -1,0 +1,64 @@
+h2 {
+    margin: 20px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 2.5;
+    text-wrap: wrap;
+}
+
+.card:hover {
+    border-color: gold;
+    box-shadow: 1px 4px 8px rgba(255, 255, 255, 0.319);
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.5;
+    }
+    20% {
+        opacity: 0.6;
+    }
+    40% {
+        opacity: 0.7;
+    }
+    60% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes moveAndFade {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        transform: translateX(100px);
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    animation: fade 3s ease-in-out infinite;
+}
+
+.card {
+    animation: moveAndFade 3s ease-in-out 1;
+}
