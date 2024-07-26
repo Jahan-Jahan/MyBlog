@@ -1,14 +1,126 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block page_title %}
 {% endblock page_title %}
 
 {% block page_content %}
 
 <style>
-    
+    #profile-wrapper {
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+
+    .card {
+        background: hsl(218, 71%, 18%);
+    }
+
+    .card:hover {
+        box-shadow: 2px 2px 8px rgb(4, 255, 125);
+    }
+
+    #my-info {
+        line-height: 2;
+    }
+
+    #profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 1px 1px 2px #69C7B6;
+    }
+
+    .social-links ul, .social-links li {
+        list-style-type: none;
+        display: inline;
+    }
+
+    .social-links {
+        padding: 0;
+        margin: 0;
+    }
+
+    .experience-container, .knowledge-container, 
+    .learn-container, .goal-container {
+        line-height: 2.5;
+    }
+
+    .social {
+        width: 25px;
+        height: 25px;
+    }
+
+    .social:hover {
+        cursor: pointer;
+    }
 </style>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card card-body h-100 border-info" id="profile-wrapper">
+                <img id="profile-pic" src="{% static 'images/profile_pic.jpg' %}"></img>
+                <hr>
+                <h4>Hi I'm X</h4>
+                <p>Love coding and...</p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card card-body h-100 border-info">
+                <h4>My information</h4>
+                <p id="my-info"></p>
 
+                <ul class="social-links">
+                    <li><img src="{% static 'images/github.png' %}" alt="Github" class="social" onclick="window.open('https://github.com/Jahan-Jahan', '_blank');"></li>
+                    <li><img src="{% static 'images/linkedin.png' %}" alt="Linkedin" class="social" onclick="window.open('https://www.linkedin.com/in/abolfazl-jahangir-a69109242/', '_blank');"></li>
+                    <li><img src="{% static 'images/telegram.png' %}" alt="Telegram" class="social" onclick="window.open('https://t.me/jahangir845', '_blank');"></li>
+                    <li><img src="{% static 'images/instagram.png' %}" alt="Instagram" class="social" onclick="window.open('https://www.instagram.com/abolfazl.jahangirr/', '_blank');"></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-body h-100">
+                <h5>My experience as a developer</h5>
+                <hr>
+                <h6>Freelance Projects:</h6>
+                <ul class="experience-container"></ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-body h-100">
+                <h5>What I know</h5>
+                <ul class="knowledge-container"></ul>                
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-body h-100">
+                <h5>How I learn</h5>
+                <h6>My learning process involves a comprehensive approach:</h6>
+                <ol class="learn-container"></ol>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-body h-100">
+                <h5>My short term goal</h5>
+                <p class="goal-container"></p>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
 
 {% endblock page_content %}

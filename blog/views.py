@@ -1,5 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Q
 from blog.models import Post, Comment, Message
 from blog.forms import CommentForm, MessageForm
 
@@ -74,3 +75,13 @@ def contact(request):
 def resume(request):
     context = {}
     return render(request, "blog/resume.html", context=context)
+
+def search(request):
+    query = request.GET.get("search") if request.GET.get("search") else ""
+    posts = Post.objects.filter(
+        Q(title__icontains=query) | 
+        Q(body__icontains=query) | 
+        Q(categories__name__icontains=query)
+    ).distinct()
+    context = {"posts": posts}
+    return render(request, "blog/index.html", context=context)

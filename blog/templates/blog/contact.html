@@ -3,15 +3,19 @@
 {% load static %}
 
 {% block page_title %}
-<h2 style="margin: 15px;">Leave a message to me!</h2>
+<h2>Leave a message to me!</h2>
 {% endblock page_title %}
 
 {% block page_content %}
 
 <style>
+    h2 {
+        margin: 15px;
+    }
+
     input[type="text"], input[type="email"], textarea {
         width: 100%;
-        max-width: 500px; /* Adjust this value as needed */
+        max-width: 500px;
     }
 
     form {
